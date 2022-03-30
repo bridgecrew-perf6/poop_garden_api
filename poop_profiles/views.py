@@ -29,7 +29,7 @@ class PoopProfileDetail(generics.RetrieveUpdateDestroyAPIView):
   queryset = PoopProfile.objects.all()
   serializer_class = PoopProfileSerializer
 
-# class FriendListList(generics.ListAPIView):
+# class FriendListList(generics.ListCreateAPIView):
 
 #   queryset = Friend.objects.friends()
 #   serializer_class = FriendListSerializer

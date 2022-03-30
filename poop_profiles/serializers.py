@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import PoopProfile
-from friendship.models import Friend
 
 class PoopProfileSerializer(serializers.ModelSerializer):
   class Meta:
