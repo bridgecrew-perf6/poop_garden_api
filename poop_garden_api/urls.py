@@ -18,8 +18,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/poop_profiles/', include('poop_profiles.urls')),
+    path('api/poop_profiles/', include('poop_profiles.urls')),
     # path('api/v1/friends/', include('friends.urls')),
     # path('friendship/', include('friendship.urls')),
-    path('api/v1/', include('rest_friendship.urls')),
+    path('api/', include('rest_friendship.urls')),
+    path('api-auth', include('rest_framework.urls')),
 ]   
