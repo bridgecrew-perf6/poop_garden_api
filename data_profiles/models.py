@@ -14,9 +14,11 @@ class PoopProfile(models.Model):
   def __str__(self):
     return self.nickname
 
-# class FriendList(models.Model):
-#   user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
-#   # friends = Friend.objects.friends(get_user_model())
+class FartProfile(models.Model):
+  fartInfo = models.IntegerField()
+  user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+  created_at = models.DateTimeField(auto_now_add=True)
+  updated_at = models.DateTimeField(auto_now=True)
 
-#   def __str__(self):
-#     return self.user
+  def __str__(self):
+    return self.user.username

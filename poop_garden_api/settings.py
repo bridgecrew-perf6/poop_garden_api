@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
      # My internal apps
-    'poop_profiles',
+    'data_profiles',
     # 'friends',
     # third party apps
     'rest_framework',
