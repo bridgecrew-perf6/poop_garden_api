@@ -46,11 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
      # My internal apps
     'poop_profiles',
-    'friends',
+    # 'friends',
     # third party apps
     'rest_framework',
     'corsheaders',
-    # 'friendship',
+    'friendship',
+    'rest_friendship'
 ]
 
 MIDDLEWARE = [
@@ -145,6 +146,14 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny'
     ]
+}
+
+REST_FRIENDSHIP = {
+   'PERMISSION_CLASSES': [
+    #   'rest_framework.permissions.IsAuthenticated',
+      'rest_framework.permissions.AllowAny',
+   ],
+   'USER_SERIALIZER': 'rest_friendship.serializers.FriendSerializer',
 }
 
 # CORS_ALLOW_ALL_ORIGINS = env.bool("ALLOW_ALL_ORIGINS")
