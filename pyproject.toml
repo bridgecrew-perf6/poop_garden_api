@@ -15,6 +15,7 @@ psycopg2-binary = "^2.9.3"
 whitenoise = "^6.0.0"
 django-friendship = "^1.9.6"
 django-rest-friendship = "^0.2.1"
+djangorestframework-simplejwt = "^5.1.0"
 
 [tool.poetry.dev-dependencies]
 
