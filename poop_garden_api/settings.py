@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import environ
+from datetime import timedelta
 
 env = environ.Env(
     DEBUG=(bool, False)
@@ -172,5 +173,11 @@ REST_FRIENDSHIP = {
    'USER_SERIALIZER': 'rest_friendship.serializers.FriendSerializer',
 }
 
-# CORS_ALLOW_ALL_ORIGINS = env.bool("ALLOW_ALL_ORIGINS")
-# CORS_ORIGIN_WHITELIST = tuple(env.list("ALLOWED_ORIGINS"))
+CORS_ALLOW_ALL_ORIGINS = env.bool("ALLOW_ALL_ORIGINS")
+CORS_ORIGIN_WHITELIST = tuple(env.list("ALLOWED_ORIGINS"))
+
+SIMPLE_JWT_HEADER = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(
+        seconds = 60 * 60 # 1 hour
+    ),
+}
