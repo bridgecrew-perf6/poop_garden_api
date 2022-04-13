@@ -1,9 +1,11 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from .serializers import PoopProfileSerializer, FartProfileSerializer
+from .serializers import PoopProfileSerializer, FartProfileSerializer, UserSerializer
 from .models import PoopProfile, FartProfile
 from rest_framework import response, request
 from rest_framework import status
 from .permissions import isOwnerOrReadOnly
+from django.contrib.auth.models import User
+
 # Create your views here.
 
 
@@ -32,6 +34,13 @@ class FartProfileDetail(RetrieveUpdateDestroyAPIView):
   queryset = FartProfile.objects.all()
   serializer_class = FartProfileSerializer
 
-  
+class UserList(ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetail(RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
