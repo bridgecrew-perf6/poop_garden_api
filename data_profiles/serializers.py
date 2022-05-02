@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import PoopProfile, FartProfile
 from django.contrib.auth.models import User
+from django.utils.html import escape
 
 class PoopProfileSerializer(serializers.ModelSerializer):
   class Meta:
@@ -20,6 +21,9 @@ class UserSerializer(serializers.ModelSerializer):
       user.set_password(password)
       user.save()
       return user
+    
+    def validate_myfield(self, value):
+      return escape(value)
 
     class Meta:
         model = User
@@ -37,3 +41,6 @@ class CreateUserSerializer(serializers.ModelSerializer):
       user.set_password(password)
       user.save()
       return user
+
+    def validate_myfield(self, value):
+      return escape(value)
