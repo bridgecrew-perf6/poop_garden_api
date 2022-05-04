@@ -15,15 +15,9 @@ from django.conf import settings
 # Create your views here.
 
 
-### I want to either create a new view or edit the view below to only show the poop profiles of a user's friends. This should make things muuuuuuch faster when loading up the front end, becouse i dont have to add poop profiles to every single user for no reason. only my friends. as the app grows this is NECESSARY
-
-# gives us the ability to add items
 class PoopProfileList(ListCreateAPIView):
 
-  # permission_classes = (isAuthenticated,)
   serializer_class = PoopProfileSerializer
-  # queryset = PoopProfile.objects.all()
-
 
   def get_queryset(self):
     user = self.request.user
@@ -33,22 +27,16 @@ class PoopProfileList(ListCreateAPIView):
     return queryset
 
 
-
-# gives us the ability to update and delete
 class PoopProfileDetail(RetrieveUpdateDestroyAPIView):
-  # permission_classes = (isAuthenticated,)
   queryset = PoopProfile.objects.all()
   serializer_class = PoopProfileSerializer
 
 
 class FartProfileList(ListCreateAPIView):
-  # permission_classes = (isOwnerOrReadOnly,)
   queryset = FartProfile.objects.all()
   serializer_class = FartProfileSerializer
 
-# gives us the ability to update and delete
 class FartProfileDetail(RetrieveUpdateDestroyAPIView):
-  # permission_classes = (isOwnerOrReadOnly,)
   queryset = FartProfile.objects.all()
   serializer_class = FartProfileSerializer
 
