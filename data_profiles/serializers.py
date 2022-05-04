@@ -5,7 +5,7 @@ from django.utils.html import escape
 
 class PoopProfileSerializer(serializers.ModelSerializer):
   class Meta:
-    fields = ('id', 'user', 'nickname', 'poopInfo', 'created_at', 'updated_at',) # will need to possibly add friends list here as well
+    fields = ('id', 'user', 'nickname', 'poopInfo', 'created_at', 'updated_at',)
     model = PoopProfile
 
 class FartProfileSerializer(serializers.ModelSerializer):
